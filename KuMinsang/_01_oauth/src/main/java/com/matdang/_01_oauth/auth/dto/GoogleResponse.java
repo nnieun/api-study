@@ -1,24 +1,22 @@
 package com.matdang._01_oauth.auth.dto;
 
-import lombok.RequiredArgsConstructor;
-
 import java.util.Map;
 
-public class NaverResponse implements OAuth2Response{
+public class GoogleResponse implements OAuth2Response{
     private final Map<String, Object> attributes;
 
-    public NaverResponse(Map<String, Object> attributes) {
+    public GoogleResponse(Map<String, Object> attributes) {
         this.attributes = attributes;
     }
 
     @Override
-    public String getProvider() {
-        return "naver";
+    public String getProviderId() {
+        return "";
     }
 
     @Override
-    public String getProviderId() {
-        return attributes.get("id").toString();
+    public String getProvider() {
+        return "google";
     }
 
     @Override

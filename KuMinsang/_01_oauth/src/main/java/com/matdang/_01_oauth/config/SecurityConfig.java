@@ -1,6 +1,6 @@
 package com.matdang._01_oauth.config;
 
-import com.matdang._01_oauth.auth.dto.CustomOAuth2UserService;
+import com.matdang._01_oauth.auth.service.CustomOAuth2UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,10 +19,10 @@ public class SecurityConfig {
                 .csrf((csrf)->csrf.disable())
                 .formLogin((login)->login.disable())
                 .httpBasic((httpBasic)->httpBasic.disable())
-                .oauth2Login((oauth2)->oauth2.userInfoEndpoint(userInfoEndpointConfig -> userInfoEndpointConfig.userService(customOAuth2UserService)))
+                .oauth2Login((oauth2)->oauth2.userInfoEndpoint(userInfoEndpointConfig -> userInfoEndpointConfig.userService(customOAuth2UserService)).defaultSuccessUrl("/welcome", true))
                 .authorizeHttpRequests(
                         (auth)->auth
-                                .requestMatchers("/")
+                                .requestMatchers("/", "/welcome")
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated()
