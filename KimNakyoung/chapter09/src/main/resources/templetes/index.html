@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .chat-container { background-color: #372f2b; display: flex; max-width: 480px; width: 100%; flex-direction: column; margin: 0 auto; }
+    .header { justify-content: flex-end; align-items: flex-start; backdrop-filter: blur(20px); background-color: rgba(55, 47, 43, 0.6); display: flex; gap: 20px; padding: 24px 8px 10px; }
+    .user-info { display: flex; gap: 10px; font-size: 16px; color: #fff; font-weight: 700; white-space: nowrap; }
+    .user-icon { aspect-ratio: 1; object-fit: auto; object-position: center; width: 24px; }
+    .username { font-family: Noto Sans KR, sans-serif; flex: 1; margin: auto 0; }
+    .header-icons { display: flex; gap: 20px; }
+    .chat-content { display: flex; width: 100%; flex-direction: column; padding: 16px 8px; }
+    .message { display: flex; gap: 8px; }
+    .avatar { aspect-ratio: 1; object-fit: auto; object-position: center; width: 32px; align-self: flex-start; }
+    .message-content { display: flex; flex-direction: column; }
+    .message-bubble { border-radius: 0 16px 16px 16px; background-color: #fff; color: #000; white-space: nowrap; padding: 8px 16px; font: 400 14px/157% Noto Sans KR, -apple-system, Roboto, Helvetica, sans-serif; }
+    .image-grid { display: flex; flex-wrap: wrap; gap: 2px; margin-top: 8px; }
+    .grid-image { aspect-ratio: 1; object-fit: auto; object-position: center; width: 80px; }
+    .timestamp { color: rgba(255, 255, 255, 0.5); align-self: flex-end; margin-top: 8px; font: 400 10px/140% Noto Sans KR, -apple-system, Roboto, Helvetica, sans-serif; }
+    .sent-message { align-items: flex-end; display: flex; margin-top: 24px; padding-left: 80px; flex-direction: column; font-weight: 400; }
+    .sent-bubble { border-radius: 16px 0 16px 16px; background-color: #f2ad5c; color: #000; white-space: nowrap; padding: 8px 16px; font: 14px/157% Noto Sans KR, sans-serif; }
+    .sent-info { justify-content: flex-end; display: flex; margin-top: 8px; gap: 8px; }
+    .date-separator { justify-content: center; align-items: center; display: flex; margin-top: 24px; gap: 10px; font-size: 10px; color: rgba(255, 255, 255, 0.2); font-weight: 400; line-height: 140%; padding: 14px 0; }
+    .separator-line { background-color: rgba(255, 255, 255, 0.2); align-self: stretch; height: 1px; flex: 1; margin: auto 0; border: 1px solid rgba(255, 255, 255, 0.2); }
+    .date-text { font-family: Noto Sans KR, sans-serif; align-self: stretch; }
+    .input-area { align-items: center; backdrop-filter: blur(20px); background-color: rgba(45, 37, 33, 0.8); display: flex; gap: 4px; font-size: 14px; color: rgba(255, 255, 255, 0.3); font-weight: 400; line-height: 157%; padding: 16px; }
+    .input-icon { aspect-ratio: 1; object-fit: auto; object-position: center; width: 24px; align-self: stretch; margin: auto 0; }
+    .input-field { font-family: Noto Sans KR, sans-serif; border-radius: 8px; background-color: rgba(0, 0, 0, 0.3); align-self: stretch; flex: 1; padding: 8px 16px; border: none; color: #fff; }
+    .send-icon { aspect-ratio: 1; object-fit: auto; object-position: center; width: 24px; align-self: stretch; margin: auto 0; }
+</style>
+
+<section class="chat-container">
+    <header class="header">
+        <div class="user-info">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/6e4d1eb3675a228379f4131b3f3805ed83ef80e45e697dcb162f8e763fb700b1?apiKey=77341563d994438499b493d20f98b22f&" alt="User icon" class="user-icon">
+            <span class="username">잇츠미😉</span>
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/815ee0eb7acf7d9e7d3613a7a7ae1fd144720e1bce22ff2430e11071448094a7?apiKey=77341563d994438499b493d20f98b22f&" alt="Additional icon" class="user-icon">
+        </div>
+        <div class="header-icons">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/37642a6ebd02180f77149c3e0a9668c62ae7227d2a5cf761ffc4228153f73d70?apiKey=77341563d994438499b493d20f98b22f&" alt="Header icon 1" class="user-icon">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/f41f05473c25c322d83ffe4998a0a8896217ddd4621269bfb4919b2bd93c6f5e?apiKey=77341563d994438499b493d20f98b22f&" alt="Header icon 2" class="user-icon">
+        </div>
+    </header>
+
+    <main class="chat-content">
+        <article class="message">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e2e953ae9689a8efd8abf775e75c8f0ce9af01a4194d22fb6906e313f857cb62?apiKey=77341563d994438499b493d20f98b22f&" alt="User avatar" class="avatar">
+            <div class="message-content">
+                <p class="message-bubble">얘좀봐</p>
+                <div class="image-grid">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b3cddd7161e3c7e94d32245dfd9fe9125542e4f3399bc11ef99ed8c911b0592?apiKey=77341563d994438499b493d20f98b22f&" alt="Grid image 1" class="grid-image">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b3cddd7161e3c7e94d32245dfd9fe9125542e4f3399bc11ef99ed8c911b0592?apiKey=77341563d994438499b493d20f98b22f&" alt="Grid image 2" class="grid-image">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b3cddd7161e3c7e94d32245dfd9fe9125542e4f3399bc11ef99ed8c911b0592?apiKey=77341563d994438499b493d20f98b22f&" alt="Grid image 3" class="grid-image">
+                    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/3b3cddd7161e3c7e94d32245dfd9fe9125542e4f3399bc11ef99ed8c911b0592?apiKey=77341563d994438499b493d20f98b22f&" alt="Grid image 4" class="grid-image">
+                </div>
+                <p class="message-bubble">멍....ㅋㅋㅋㅋ</p>
+                <span class="timestamp">오후 1:40</span>
+            </div>
+        </article>
+
+        <article class="sent-message">
+            <p class="sent-bubble">앜ㅋㅋㅋㅋㅋㅋ</p>
+            <div class="sent-info">
+                <span class="timestamp">오후 13:40</span>
+                <p class="sent-bubble">너무 귀여워😍</p>
+            </div>
+        </article>
+
+        <article class="message">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e2e953ae9689a8efd8abf775e75c8f0ce9af01a4194d22fb6906e313f857cb62?apiKey=77341563d994438499b493d20f98b22f&" alt="User avatar" class="avatar">
+            <div class="message-content">
+                <p class="message-bubble">아무생각이 없다</p>
+                <div class="sent-info">
+                    <p class="message-bubble">난줄</p>
+                    <span class="timestamp">13:40</span>
+                </div>
+            </div>
+        </article>
+
+        <article class="sent-message">
+            <p class="sent-bubble">ㅋㅋㅋㅋㅋㅋ</p>
+            <div class="sent-info">
+                <span class="timestamp">오후 13:40</span>
+                <p class="sent-bubble">근데 왜 똑같은 사진 4장이야</p>
+            </div>
+        </article>
+    </main>
+
+    <footer class="input-area">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9dd337638989a5cd7488158e8ec3a85e110877f1a25a8fd50d44a1941261b6e6?apiKey=77341563d994438499b493d20f98b22f&" alt="Input icon" class="input-icon">
+        <input type="text" placeholder="메시지를 입력해 주세요" class="input-field">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/bd401413f1a68c5196ade135831e4569ade914c3fae2a5cd6de9e84dcc847e8e?apiKey=77341563d994438499b493d20f98b22f&" alt="Send icon" class="send-icon">
+    </footer>
+</section>
+</body>
+</html>
